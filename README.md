@@ -25,6 +25,11 @@ Please answer the following question textually.
 
 The file web/showhospitalpatients.php is intended to retrieve a list of patients for a given hospital and return that in json format. Are there any comments you would like to make? What could be improved about the code ?
 
+1. Instead of using $request->get('hospitalId'), to get the hospitalId we can use $request->query->get('hospitalId'), its more faster.
+2. Instead of initialising the objects using the fully qualified name of the class.. Using use statements in the top of the file is the better approach
+3. We can use the new [] syntax instead of array() for cleaner code
+4. Instead of keeping this file inside the web folder we can move the code to a controller action, that will be cleaner approach. If you feel controller is slow,  you can use controller as service to serve this request.
+
 #### Exercise
 
 This is the coding portion of the test. Please write code as well as you can using existing entities/repositories where appropriate and adding classes/files where needed.
